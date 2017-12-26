@@ -18,6 +18,14 @@
 import axios from '~/plugins/axios'
 
 export default {
+  fetch ({ store, redirect }) {
+    console.log(store.state.authUser)
+    console.log(store.state)
+    if (!store.state.authUser) {
+      console.log('test')
+      // return redirect('/auth')
+    }
+  },
   async asyncData () {
     let { data } = await axios.get('/api/users')
     return { users: data }
@@ -25,6 +33,11 @@ export default {
   head () {
     return {
       title: 'Users'
+    }
+  },
+  methods: {
+    async login () {
+      await this.$store.dispatch('login')
     }
   }
 }
