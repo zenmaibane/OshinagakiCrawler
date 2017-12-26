@@ -13,7 +13,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  mode: "spa",
+  mode: 'spa',
   /*
   ** Global CSS
   */
